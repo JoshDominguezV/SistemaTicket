@@ -21,17 +21,7 @@
                         {{ __('Users') }}
                     </x-nav-link>
                 </div>
-                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="route('banks.index')" :active="request()->routeIs('banks.*')">
-                        {{ __('Banks') }}
-                    </x-nav-link>
-                </div>
 
-                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="route('ticket')" :active="request()->routeIs('ticket')">
-                        {{ __('Ticket') }}
-                    </x-nav-link>
-                </div>
             </div>
 
             <!-- Settings Dropdown -->
