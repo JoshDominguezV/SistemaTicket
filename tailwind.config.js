@@ -1,21 +1,22 @@
-import defaultTheme from 'tailwindcss/defaultTheme';
-import forms from '@tailwindcss/forms';
+const {colors} = require('tailwindcss/defaultTheme')
 
-/** @type {import('tailwindcss').Config} */
-export default {
-    content: [
-        './vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php',
-        './storage/framework/views/*.php',
+module.exports = {
+    purge: [
+        './resources/js/**/*.vue',
+        './resources/scss/**/*.scss',
         './resources/views/**/*.blade.php',
     ],
-
     theme: {
-        extend: {
-            fontFamily: {
-                sans: ['Figtree', ...defaultTheme.fontFamily.sans],
-            },
-        },
+        colors,
+        extend: {}
     },
-
-    plugins: [forms],
-};
+    variants: {},
+    plugins: [
+        require('@tailwindcss/ui'),
+        require('@tailwindcss/custom-forms'),
+    ],
+    future: {
+        purgeLayersByDefault: true,
+        removeDeprecatedGapUtilities: true,
+    },
+}
